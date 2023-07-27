@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuid } from "uuid";
+import { Navigate } from "react-router-dom";
 
 const ColorForm = ({ addColor }) => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,7 @@ const ColorForm = ({ addColor }) => {
   };
   return (
     <div>
+      {formData && <Navigate to="/colors" replace={true} />}
       <form onSubmit={gatherInput}>
         <div>
           <label htmlFor="name">Name:</label>
